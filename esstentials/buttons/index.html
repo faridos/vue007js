@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>`echo $TM_FILENAME|cut -d. -f1`</title>
+ <script src="https://unpkg.com/vue"></script>
+ <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+<div id="app">
+<button type="button" @click='reveal'name="button" class='vue-btn'>reveal secretNumber</button>
+</div>
+<script>
+ var app=new Vue({
+   el:'#app',
+   data:{
+       secretNumber: Math.floor(Math.random()* 50) + 1
+   },
+   methods:{
+     reveal(){
+       alert(`yr secret number is ${this.secretNumber}`)
+     }
+   }
+
+ })
+</script>
+
+</body>
+</html>

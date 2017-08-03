@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>`echo $TM_FILENAME|cut -d. -f1`</title>
+ <script src="https://unpkg.com/vue"></script>
+ <link rel="stylesheet" href="http://davidtkatz.com/public_css/vue.css">
+</head>
+<body>
+<div id="app">
+  hello world for the <span>{{count}}</span> time!
+  <button type="button" name="button" @click='increment'>increm</button>
+</div>
+<script>
+ var app=new Vue({
+   el:'#app',
+   data:{
+       count: 0
+   },
+   methods:{
+     alerttime(){
+       alert(`the time is ${Date.now().toLocaleString()}`)
+     },
+
+     increment(){
+      this.count++
+     },
+   },
+   created() {
+     this.alerttime()
+   },
+   mounted() {
+     this.alerttime()
+   },
+   updated(){
+     console.log(this.count)
+   }
+
+ })
+</script>
+
+</body>
+</html>
